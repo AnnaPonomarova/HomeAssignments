@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h3>Задача 6</h3>
+	<h5>З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо
+		та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.</h5>
+
+	<script>
+		//1.Вводимо необхідні дані
+		let ProductCost1 = parseFloat(prompt('Введіть вартість першого товару', '0'))
+		let ProductCount1 = parseInt(prompt('Введіть кількість одиниць першого товару', '0'))
+
+		let ProductCost2 = parseFloat(prompt('Введіть вартість другого товару', '0'))
+		let ProductCount2 = parseInt(prompt('Введіть кількість одиниць другого товару', '0'))
+
+		let ProductCost3 = parseFloat(prompt('Введіть вартість третього товару', '0'))
+		let ProductCount3 = parseInt(prompt('Введіть кількість одиниць третього товару', '0'))
+
+		//2.Знаходимо результат
+		let productCostTotal1 = ProductCost1 * ProductCount1
+		let productCostTotal2 = ProductCost2 * ProductCount2
+		let productCostTotal3 = ProductCost3 * ProductCount3
+		let productCostTotalSum = productCostTotal1 + productCostTotal2 + productCostTotal3
+
+		//3.Виводимо результат
+		document.write(`	
+		<div>
+			<ul>
+				<li>
+					<p>Перший товар</p>
+					<p>Вартість товару ${ProductCost1}</p>
+					<p>Кількість товару ${ProductCount1}</p>
+					<p>Ціна ${productCostTotal1}</p>
+				</li>
+
+				<li>
+					<p>Другий товар</p>
+					<p>Вартість товару ${ProductCost2}</p>
+					<p>Кількість товару ${ProductCount2}</p>
+					<p>Ціна ${productCostTotal2}</p>
+				</li>
+
+				<li>
+					<p>Третій товар</p>
+					<p>Вартість товару ${ProductCost3}</p>
+					<p>Кількість товару ${ProductCount3}</p>
+					<p>Ціна ${productCostTotal3}</p>
+				</li>
+				<hr>
+				<p>Разом ${productCostTotalSum}</p>
+				
+			</ul>
+		</div>
+		`)
+	</script>
+
+
+</body>
+
+</html>
