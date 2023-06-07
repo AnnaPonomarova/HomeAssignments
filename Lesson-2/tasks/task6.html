@@ -33,37 +33,43 @@
 
 		//3.Виводимо результат
 		document.write(`	
-		<div>
-			<ul>
-				<li>
-					<p>Перший товар</p>
-					<p>Вартість товару ${ProductCost1}</p>
-					<p>Кількість товару ${ProductCount1}</p>
-					<p>Ціна ${productCostTotal1}</p>
-				</li>
-
-				<li>
-					<p>Другий товар</p>
-					<p>Вартість товару ${ProductCost2}</p>
-					<p>Кількість товару ${ProductCount2}</p>
-					<p>Ціна ${productCostTotal2}</p>
-				</li>
-
-				<li>
-					<p>Третій товар</p>
-					<p>Вартість товару ${ProductCost3}</p>
-					<p>Кількість товару ${ProductCount3}</p>
-					<p>Ціна ${productCostTotal3}</p>
-				</li>
-				<hr>
-				<p>Разом ${productCostTotalSum}</p>
+		<table>
+				<tr>
+					<th>Продукт</th>
+					<th>Ціна</th>
+					<th>Кількість</th>
+					<th>Вартість</th>
+				</tr>
+				<tr>
+					<th>Перший товар</th>
+					<td>${ProductCost1}</td>
+					<td>${ProductCount1}</td>
+					<td>${productCostTotal1}</td>
+				</tr>
 				
-			</ul>
-		</div>
+				<tr>
+					<th>Другий товар</th>
+					<td>${ProductCost2}</td>
+					<td>${ProductCount2}</td>
+					<td>${productCostTotal2}</td>
+				</tr>
+
+				<tr>
+					<th>Третій товар</th>
+					<td>${ProductCost3}</td>
+					<td>${ProductCount3}</td>
+					<td>${productCostTotal3}</td>
+				</tr>
+
+				<th>Разом</th>
+				<td></td>
+				<td></td>
+				<td>${productCostTotalSum}</td>
+				</tr>
+
+			</table>		
 		`)
 	</script>
-
-
 </body>
 
 </html>
