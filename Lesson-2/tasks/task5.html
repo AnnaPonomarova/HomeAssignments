@@ -19,7 +19,7 @@
 
 		//2.Знаходимо результат
 		let hourCount = Math.floor(secCount / 3600)
-		let minuteCount = Math.floor(secCount % 3600) / 60
+		let minuteCount = Math.floor((secCount % 3600) / 60)
 
 		//3.Виводимо результат
 		document.write(`${secCount} сек. = ${hourCount} год. та ${minuteCount} хв.`)
