@@ -13,35 +13,36 @@
 	<div class="container">
 		<h3>Задача 6</h3>
 		<p>З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.</p>
+		<div class="container-new">
+			<script>
+				//1.Вводимо необхідні дані
+				let dayNumber = parseInt(prompt('Введіть номер дня тижня від 1 до 7', '1'))
+				let dayName
 
-		<script>
-			//1.Вводимо необхідні дані
-			let dayNumber = parseInt(prompt('Введіть номер дня тижня від 1 до 7', '1'))
-			let dayName
+				//2.Знаходимо результат
+				switch (dayNumber) {
+					case 1: dayName = 'Понеділок';
+						break;
+					case 2: dayName = 'Вівторок';
+						break;
+					case 3: dayName = 'Середа';
+						break;
+					case 4: dayName = 'Четвер';
+						break;
+					case 5: dayName = "П'ятниця";
+						break;
+					case 6: dayName = 'Субота';
+						break;
+					case 7: dayName = 'Неділя';
+						break;
+					default: dayName = 'Неправильно введено номер дня тижня'
+						break;
+				}
 
-			//2.Знаходимо результат
-			switch (dayNumber) {
-				case 1: dayName = 'Понеділок';
-					break;
-				case 2: dayName = 'Вівторок';
-					break;
-				case 3: dayName = 'Середа';
-					break;
-				case 4: dayName = 'Четвер';
-					break;
-				case 5: dayName = "П'ятниця";
-					break;
-				case 6: dayName = 'Субота';
-					break;
-				case 7: dayName = 'Неділя';
-					break;
-				default: dayName = 'Неправильно введено номер дня тижня'
-					break;
-			}
-
-			//3.Виводимо результат
-			document.write(`${dayName} `)
-		</script>
+				//3.Виводимо результат
+				document.write(`${dayName} `)
+			</script>
+		</div>
 	</div>
 </body>
 

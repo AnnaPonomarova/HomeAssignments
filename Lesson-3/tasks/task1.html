@@ -12,27 +12,29 @@
 <body>
 	<div class="container">
 		<h3>Задача 1</h3>
-		<p>З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести не екран ім’я тієї дитини, у
+		<p>З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести на екран ім’я тієї дитини, у
 			якої кількість цукерок є більшою, або вивести, що кількість однакова.</p>
 
-		<script>
-			//1.Вводимо необхідні дані
-			let firstChild = prompt("Введіть ім'я першої дитини")
-			let firstChildCandyCount = parseInt(prompt('Введіть кількість цукерок у першої дитини ' + firstChild))
-			let secondChild = prompt("Введіть ім'я другої дитини")
-			let secondChildCandyCount = parseInt(prompt('Введіть кількість цукерок у другої дитини ' + secondChild))
+		<div class="container-new">
+			<script>
+				//1.Вводимо необхідні дані
+				let firstChild = prompt("Введіть ім'я першої дитини")
+				let firstChildCandyCount = parseInt(prompt('Введіть кількість цукерок у першої дитини ' + firstChild))
+				let secondChild = prompt("Введіть ім'я другої дитини")
+				let secondChildCandyCount = parseInt(prompt('Введіть кількість цукерок у другої дитини ' + secondChild))
 
-			//2.Знаходимо, виводимо результат
+				//2.Знаходимо, виводимо результат
 
-			if (!Number.isInteger(firstChildCandyCount) || !Number.isInteger(secondChildCandyCount))
-				document.write(`невірно вказана кількість цукерок`)
-			else if (firstChildCandyCount > secondChildCandyCount)
-				document.write(`у першої дитини на ім'я ${firstChild} цукерок більше`)
-			else if (firstChildCandyCount < secondChildCandyCount)
-				document.write(`у другої дитини на ім'я ${secondChild} цукерок більше`)
-			else if (firstChildCandyCount = secondChildCandyCount)
-				document.write(`у дітей ${firstChild} та ${secondChild} цукерок однаково`)
-		</script>
+				if (!Number.isInteger(firstChildCandyCount) || !Number.isInteger(secondChildCandyCount))
+					document.write(`невірно вказана кількість цукерок`)
+				else if (firstChildCandyCount > secondChildCandyCount)
+					document.write(`Відповідь: у першої дитини на ім'я ${firstChild} цукерок більше`)
+				else if (firstChildCandyCount < secondChildCandyCount)
+					document.write(`Відповідь: у другої дитини на ім'я ${secondChild} цукерок більше`)
+				else if (firstChildCandyCount = secondChildCandyCount)
+					document.write(`Відповідь: у дітей ${firstChild} та ${secondChild} цукерок однаково`)
+			</script>
+		</div>
 	</div>
 </body>
 

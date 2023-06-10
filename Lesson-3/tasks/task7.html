@@ -13,37 +13,38 @@
 	<div class="container">
 		<h3>Задача 7</h3>
 		<p>З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься</p>
+		<div class="container-new">
+			<script>
+				//1.Вводимо необхідні дані
+				let monthNumber = parseInt(prompt('Введіть номер місяця', '1'))
+				let seasonName
 
-		<script>
-			//1.Вводимо необхідні дані
-			let monthNumber = parseInt(prompt('Введіть номер місяця', '1'))
-			let seasonName
+				//2.Знаходимо результат
+				switch (monthNumber) {
+					case 12:
+					case 1:
+					case 2: seasonName = 'Це місяць зими'
+						break;
+					case 3:
+					case 4:
+					case 5: seasonName = 'Це місяць весни';
+						break;
+					case 6:
+					case 7:
+					case 8: seasonName = "Це місяць літа";
+						break;
+					case 9:
+					case 10:
+					case 11: seasonName = "Це місяць осені";
+						break;
+					default: seasonName = 'Неправильно введено номер місяця'
+						break;
+				}
 
-			//2.Знаходимо результат
-			switch (monthNumber) {
-				case 12:
-				case 1:
-				case 2: seasonName = 'Це місяць зими'
-					break;
-				case 3:
-				case 4:
-				case 5: seasonName = 'Це місяць весни';
-					break;
-				case 6:
-				case 7:
-				case 8: seasonName = "Це місяць літа";
-					break;
-				case 9:
-				case 10:
-				case 11: seasonName = "Це місяць осені";
-					break;
-				default: dayName = 'Неправильно введено номер місяця'
-					break;
-			}
-
-			//3.Виводимо результат
-			document.write(`${seasonName} `)
-		</script>
+				//3.Виводимо результат
+				document.write(`${seasonName} `)
+			</script>
+		</div>
 	</div>
 </body>
 
