@@ -15,12 +15,12 @@
 
 	<script>
 		//1.Вводимо необхідні дані
-		let GoodsCost = parseFloat(prompt('Введіть вартість одиниці товару', '0'))
-		let GoodsCount = parseFloat(prompt('Введіть кількість товару', '0'))
+		let goodsCost = parseFloat(prompt('Введіть вартість одиниці товару', '0'))
+		let goodsCount = parseFloat(prompt('Введіть кількість товару', '0'))
 		const TAX = 5
 
 		//2.Знаходимо результат
-		let costTotal = GoodsCost * GoodsCount
+		let costTotal = goodsCost * goodsCount
 		let taxTotal = costTotal * TAX / 100
 
 		//3.Виводимо результат

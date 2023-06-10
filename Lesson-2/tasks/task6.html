@@ -16,19 +16,19 @@
 
 	<script>
 		//1.Вводимо необхідні дані
-		let ProductCost1 = parseFloat(prompt('Введіть вартість першого товару', '0'))
-		let ProductCount1 = parseInt(prompt('Введіть кількість одиниць першого товару', '0'))
+		let productCost1 = parseFloat(prompt('Введіть вартість першого товару', '0'))
+		let productCount1 = parseInt(prompt('Введіть кількість одиниць першого товару', '0'))
 
-		let ProductCost2 = parseFloat(prompt('Введіть вартість другого товару', '0'))
-		let ProductCount2 = parseInt(prompt('Введіть кількість одиниць другого товару', '0'))
+		let productCost2 = parseFloat(prompt('Введіть вартість другого товару', '0'))
+		let productCount2 = parseInt(prompt('Введіть кількість одиниць другого товару', '0'))
 
-		let ProductCost3 = parseFloat(prompt('Введіть вартість третього товару', '0'))
-		let ProductCount3 = parseInt(prompt('Введіть кількість одиниць третього товару', '0'))
+		let productCost3 = parseFloat(prompt('Введіть вартість третього товару', '0'))
+		let productCount3 = parseInt(prompt('Введіть кількість одиниць третього товару', '0'))
 
 		//2.Знаходимо результат
-		let productCostTotal1 = ProductCost1 * ProductCount1
-		let productCostTotal2 = ProductCost2 * ProductCount2
-		let productCostTotal3 = ProductCost3 * ProductCount3
+		let productCostTotal1 = productCost1 * productCount1
+		let productCostTotal2 = productCost2 * productCount2
+		let productCostTotal3 = productCost3 * productCount3
 		let productCostTotalSum = productCostTotal1 + productCostTotal2 + productCostTotal3
 
 		//3.Виводимо результат
@@ -42,22 +42,22 @@
 				</tr>
 				<tr>
 					<th>Перший товар</th>
-					<td>${ProductCost1}</td>
-					<td>${ProductCount1}</td>
+					<td>${productCost1}</td>
+					<td>${productCount1}</td>
 					<td>${productCostTotal1}</td>
 				</tr>
 				
 				<tr>
 					<th>Другий товар</th>
-					<td>${ProductCost2}</td>
-					<td>${ProductCount2}</td>
+					<td>${productCost2}</td>
+					<td>${productCount2}</td>
 					<td>${productCostTotal2}</td>
 				</tr>
 
 				<tr>
 					<th>Третій товар</th>
-					<td>${ProductCost3}</td>
-					<td>${ProductCount3}</td>
+					<td>${productCost3}</td>
+					<td>${productCount3}</td>
 					<td>${productCostTotal3}</td>
 				</tr>
 
