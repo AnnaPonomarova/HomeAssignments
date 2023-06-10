@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Задача 5</h3>
+		<p>З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль).
+			Вивести на екран назву транспортного засобу, яким він може керувати.</p>
+
+		<script>
+			//1.Вводимо необхідні дані
+			let driverCategory = (prompt('Введіть назва категорії водія', 'A або B або C'))
+			let transport
+
+			//2.Знаходимо, виводимо результат
+			switch (driverCategory) {
+				case 'A': transport = 'Ви маєте право керувати мотоциклом';
+					break;
+				case 'B': transport = 'Ви маєте право керувати легковим автомобілем';
+					break;
+				case 'C': transport = 'Ви маєте право керувати вантажним автомобілем';
+					break;
+				default: transport = 'Неправильно введена категорія'
+					break;
+			}
+
+			//3.Виводимо результат
+			alert(transport)
+		</script>
+	</div>
+</body>
+
+</html>
