@@ -24,7 +24,7 @@
 			//2.Знаходимо, виводимо результат
 			if (goodCost > moneyCount)
 				alert('у вас не вистачає грошей')
-			else if (goodCost < moneyCount) {
+			else if (goodCost <= moneyCount) {
 				if (moneyCount >= goodCost + ticketPrice)
 					if (confirm('Ви бажаєте купити лотерею за ' + ticketPrice + ' грн?'))
 						alert('бажаю удачі')
