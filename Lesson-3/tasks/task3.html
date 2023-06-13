@@ -19,17 +19,19 @@
 				let minNum = 1, maxNum = 5
 				let randNum = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
 				let userNum = parseInt(prompt('Введіть число від 1 до 5'))
+				let message
 
 				//2.Знаходимо, виводимо результат
 				if (userNum === randNum)
-					document.write(`Ви вгадали! Вітаю!`)
+					message = 'Ви вгадали! Вітаю!'
 				else {
 					userNum = parseInt(prompt('Не вгадали, спробуйте ще раз. Введіть число від 1 до 5'))
 					if (userNum === randNum)
-						document.write(`Ви вгадали! Вітаю!`)
+						message = 'Ви вгадали! Вітаю!'
 					else
-						document.write(`Нажаль, Ви не вгадали, це число ${randNum}`)
+						message = 'Нажаль, Ви не вгадали, це число ' + randNum
 				}
+				document.write(message)
 			</script>
 		</div>
 	</div>

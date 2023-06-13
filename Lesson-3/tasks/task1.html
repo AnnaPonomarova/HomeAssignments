@@ -22,17 +22,18 @@
 				let firstChildCandyCount = parseInt(prompt('Введіть кількість цукерок у першої дитини ' + firstChild))
 				let secondChild = prompt("Введіть ім'я другої дитини")
 				let secondChildCandyCount = parseInt(prompt('Введіть кількість цукерок у другої дитини ' + secondChild))
-
+				let result
 				//2.Знаходимо, виводимо результат
 
 				if (!Number.isInteger(firstChildCandyCount) || !Number.isInteger(secondChildCandyCount))
-					document.write(`невірно вказана кількість цукерок`)
+					result = 'невірно вказана кількість цукерок'
 				else if (firstChildCandyCount > secondChildCandyCount)
-					document.write(`Відповідь: у першої дитини на ім'я ${firstChild} цукерок більше`)
+					result = "Відповідь: у першої дитини на ім'я " + firstChild + " цукерок більше"
 				else if (firstChildCandyCount < secondChildCandyCount)
-					document.write(`Відповідь: у другої дитини на ім'я ${secondChild} цукерок більше`)
-				else if (firstChildCandyCount = secondChildCandyCount)
-					document.write(`Відповідь: у дітей ${firstChild} та ${secondChild} цукерок однаково`)
+					result = "Відповідь: у другої дитини на ім'я " + secondChild + " цукерок більше"
+				else
+					result = 'Відповідь: у дітей ' + firstChild + ' та ' + secondChild + ' цукерок однаково'
+				document.write(result)
 			</script>
 		</div>
 	</div>

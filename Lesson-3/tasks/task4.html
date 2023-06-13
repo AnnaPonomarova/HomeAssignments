@@ -14,24 +14,27 @@
 		<h3>Задача 4</h3>
 		<p>З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом,
 			працівником, пенсіонером).</p>
+		<div class="container-new">
 
-		<script>
-			//1.Вводимо необхідні дані
-			let userAge = parseInt(prompt('Введіть вік', '0'))
 
-			//2.Знаходимо, виводимо результат
-			if (userAge <= 6)
-				alert('Ви дитина')
-			else if (userAge <= 16)
-				alert('Ви школяр')
-			else if (userAge <= 23)
-				alert('Ви студент')
-			else if (userAge <= 60)
-				alert('Ви працівник')
-			else if (userAge > 60)
-				alert('Ви пенсіонер')
+			<script>
+				//1.Вводимо необхідні дані
+				let userAge = parseInt(prompt('Введіть вік', '0'))
 
-		</script>
+				//2.Знаходимо, виводимо результат
+				if (userAge <= 6)
+					message = 'Ви дитина'
+				else if (userAge <= 16)
+					message = 'Ви школяр'
+				else if (userAge <= 23)
+					message = 'Ви студент'
+				else if (userAge <= 60)
+					message = 'Ви працівник'
+				else if (userAge > 60)
+					message = 'Ви пенсіонер'
+				document.write(message)
+			</script>
+		</div>
 	</div>
 </body>
 
