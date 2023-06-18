@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="../css/style.css" />
+   <title>Document</title>
+</head>
+
+<body>
+   <div class="container">
+      <h3>Задача 9</h3>
+      <p>Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).</p>      
+      <div class="container-new">
+      <script>
+			const userNum=parseInt(prompt('Загадайте число від 1 до 13'))
+			const min=1, max=13
+			let computerChoice
+   do {
+		computerChoice = min + Math.floor(Math.random() * (max - min + 1))
+		if (confirm(`Це число ${computerChoice}?`))	{
+		alert ('Ура! Я вгадав)))')
+		break}
+   } while (computerChoice!==userNum)
+   </script>
+   </div>
+</body>
+</html>

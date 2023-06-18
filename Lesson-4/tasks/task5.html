@@ -15,14 +15,17 @@
       
       <div class="container-new">
         <script>
-			let userNum=parseInt(prompt('zagad chislo ot 1 do 13'))
+			const userNum=parseInt(prompt('Загадайте число від 1 до 13'))
 			const min=1, max=13
-         let computerChoice
-          for (let attempt = 0; attempt < 3; attempt++) {
-            computerChoice = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
-            if (computerChoice ===userNum)
-				alert ('vgadaly')
+      let computerChoice
+          for (let attempt = 0; attempt < 3; attempt++) {            
+            computerChoice = min + Math.floor(Math.random() * (max - min + 1))
+            if (confirm(`Це число ${computerChoice}?`)){
+              alert ('Ура! Я вгадав)))')
 				break
+            }				
+        else if (attempt===2)
+        alert('Не вгадав! Наступного разу мені пощастить(((')
           }
         </script>
     </div>
