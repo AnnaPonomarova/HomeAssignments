@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Задача 5</h3>
+		<p>Інвестор вклав S тис. грн на 20 років під 20% річних. Визначити за допомогою циклів суму, яку він
+			одержить (без оподаткування).</p>
+
+		<div class="container-new">
+			<script>
+				let initialSum = parseFloat(prompt('Введіть суму інвестування'))
+				const yearPercent = 0.2
+				let profit
+				let result
+				for (let i = 0; i < 20; i++) {
+					profit = initialSum + initialSum * 0.2
+					initialSum = profit
+				}
+				document.write(`${profit.toFixed(2)} за 20 років`)
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>

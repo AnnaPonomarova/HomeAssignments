@@ -14,5 +14,8 @@
     "editor.formatOnSave": true
   },
   "prettier.singleQuote": true,
-  "prettier.trailingComma": "all"
+  "prettier.trailingComma": "all",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }

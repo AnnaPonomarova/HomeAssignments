@@ -17,12 +17,13 @@
 			const userNum=parseInt(prompt('Загадайте число від 1 до 13'))
 			const min=1, max=13
 			let computerChoice
+         let guessNumber
    do {
 		computerChoice = min + Math.floor(Math.random() * (max - min + 1))
-		if (confirm(`Це число ${computerChoice}?`))	{
+      guessNumber = confirm(`Це число ${computerChoice}?`)
+		if (guessNumber)
 		alert ('Ура! Я вгадав)))')
-		break}
-   } while (true)
+   } while (!guessNumber)
    </script>
    </div>
 </body>
