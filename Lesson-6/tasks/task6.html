@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Задача 8</h3>
+		<p>
+			З клавіатури вводиться число. Знаходити суму цифр до тих пір. Поки сума не стане більшую за 20.
+		</p>
+		<div class="container-new">
+			<script>
+				let number
+				let sum = 0
+				do {
+					number = parseFloat(prompt('Ведіть число'))
+					sum += number
+				}
+				while (sum <= 20)
+				document.write(`Сума більше за 20, сума = ${sum}`)
+			</script>
+		</div>
+</body>
+
+</html>

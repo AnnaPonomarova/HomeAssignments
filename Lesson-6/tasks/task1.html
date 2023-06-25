@@ -20,12 +20,11 @@
 				let initialSum = parseFloat(prompt('Введіть суму інвестування'))
 				const yearPercent = 0.2
 				let profit
-				let result
 				for (let i = 0; i < 20; i++) {
 					profit = initialSum + initialSum * 0.2
 					initialSum = profit
 				}
-				document.write(`${profit.toFixed(2)} за 20 років`)
+				document.write(`${Math.ceil(profit)} за 20 років`)
 			</script>
 		</div>
 	</div>

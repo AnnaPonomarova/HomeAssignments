@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Задача 2</h3>
+		<p>
+			Відобразити трикутник за допомогою символів «о»
+		</p>
+		<p><img src="../img/2.jpg" /></p>
+		<div class="container-new">
+			<script>
+				let symbol = 'o'
+
+				//1 варіант
+				let str = ''
+				for (let rowNum = 0; rowNum < 7; rowNum++) {
+					str += symbol
+					document.write(`${str}<br>`)
+				}
+				document.write(`<hr>`)
+
+				//2 варіант
+				symbol = 'a'
+				for (let rowNum2 = 0; rowNum2 < 7; rowNum2++) {
+					document.write(`${symbol.repeat(rowNum2 + 1)}<br>`)
+				}
+
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>
