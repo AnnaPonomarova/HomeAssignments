@@ -20,8 +20,6 @@
 		<div class="container-new">
 			<script>
 
-				getNegativeTempCount(parseFloat(prompt('Кількість показів температур')))
-
 				function getNegativeTempCount(tempCount) {
 					let negativeTempCount = 0
 					const minTemp = -30,
@@ -35,6 +33,9 @@
 					}
 					return document.write(`Кількість від’ємних показів температури ${negativeTempCount}`)
 				}
+
+				let tempCount = parseFloat(prompt('Кількість показів температур'))
+				getNegativeTempCount(tempCount)
 
 			</script>
 		</div>

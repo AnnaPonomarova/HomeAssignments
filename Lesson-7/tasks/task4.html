@@ -17,8 +17,6 @@
 		<div class="container-new">
 			<script>
 
-				getTable(parseInt(prompt('Кількість строк')), parseInt(prompt('Кількість колонок')), prompt('Повідомлення'))
-
 				function getTable(rowCount, columnCount, message) {
 					document.write('<table border="2px">')
 					for (let i = 0; i < rowCount; i++) {
@@ -30,7 +28,11 @@
 					}
 					document.write('</table>')
 				}
+				let rowCount = parseInt(prompt('Кількість строк'))
+				let columnCount = parseInt(prompt('Кількість колонок'))
+				let message = prompt('Повідомлення')
 
+				getTable(rowCount, columnCount, message)
 			</script>
 		</div>
 </body>

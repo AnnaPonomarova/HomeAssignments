@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Задача 8</h3>
+		<p>
+			Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим
+			чином значеннями від -500 до 500). Надаючи користувачу можливість вибирати номери елементів (поки він не
+			відмовиться). Знаходити сумарний виграш.
+		</p>
+
+		<div class="container-new">
+			<script>
+
+				let lotterySize = parseInt(prompt('Введіть кількість номерків'))
+				let lotteryValue = []
+
+				for (let i = 0; i < lotterySize; i++) {
+					const minWin = -500, maxWin = 500
+					let randWinValue = minWin + Math.floor(Math.random() * (maxWin - minWin + 1))
+					lotteryValue.push(randWinValue)
+				}
+				document.write(`${lotteryValue}<br>`)
+
+				let winSum = 0
+				let userChoice
+				do {
+					userChoice = prompt(`Зробіть Ваш вибір від 1 до ${lotterySize}`)
+					winSum = winSum + lotteryValue[userChoice - 1]
+					let finish = confirm(`Ваш виграш = ${winSum}. Хочете спробувати ще раз?`)
+					if (!finish) break
+				}
+				while (userChoice)
+
+				if (winSum > 0) document.write(`Ваш виграш = ${winSum}`)
+				else if (winSum < 0) document.write(`Пощастить іншим разом. Ваш програш = ${Math.abs(winSum)}`)
+				else document.write('Ви нічого не виграли и не програли')
+
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>
