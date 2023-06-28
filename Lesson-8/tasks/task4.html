@@ -16,7 +16,33 @@
 		<div class="container-new">
 			<script>
 
+				let names = []
 
+				let namesCount = parseInt(prompt('Введіть кількість учнів'))
+
+				const name1 = 'Ivan', name2 = 'Anna', name3 = 'Alex', name4 = 'Olga'
+
+				for (let i = 0; i < namesCount; i++) {
+					const minNum = 1, maxNum = 4
+					let randName = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+					switch (randName) {
+						case 1: names.push(name1)
+							break
+						case 2: names.push(name2)
+							break
+						case 3: names.push(name3)
+							break
+						case 4: names.push(name4)
+							break
+					}
+				}
+				document.write(`${names}<br>`)
+
+				let ivanCount = 0
+				for (let i = 0; i < names.length; i++) {
+					if (names[i] === 'Ivan') ivanCount++
+				}
+				document.write(`Кількість Іванів = ${ivanCount}`)
 
 			</script>
 		</div>

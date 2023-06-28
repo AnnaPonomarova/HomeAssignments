@@ -34,7 +34,7 @@
 				let winSum = 0
 				let userChoice
 				do {
-					userChoice = prompt(`Зробіть Ваш вибір від 1 до ${lotterySize}`)
+					userChoice = parseInt(prompt(`Зробіть Ваш вибір від 1 до ${lotterySize}`))
 					winSum = winSum + lotteryValue[userChoice - 1]
 					let finish = confirm(`Ваш виграш = ${winSum}. Хочете спробувати ще раз?`)
 					if (!finish) break

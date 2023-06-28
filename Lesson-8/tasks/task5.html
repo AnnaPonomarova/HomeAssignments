@@ -11,13 +11,62 @@
 
 <body>
 	<div class="container">
-		<h3>Задача 1</h3>
+		<h3>Задача 2</h3>
 		<p>
-			Створити функцію, яка за номером місяця повертає його назву.
+			Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:<br>
+			• номери днів, протягом яких кількість відвідувачів була меншою за 20;<br>
+			• номери днів, коли кількість відвідувачів була мінімальною;<br>
+			• номери днів, коли кількість відвідувачів була максимальною;<br>
+			• загальну кількість клієнтів у робочі дні та окремо загальну кількість клієнтів на вихідних.
 		</p>
+
 		<div class="container-new">
 			<script>
 
+				let visitorsCount = []
+				let daysOfWeek = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П"ятниця', 'Субота', 'Неділя']
+
+				for (let i = 0; i < 7; i++) {
+					minVisitorsCount = 0, maxVisitorsCount = 100
+					let randBuyerCount = randName = minVisitorsCount + Math.floor(Math.random() * (maxVisitorsCount - minVisitorsCount + 1))
+					visitorsCount.push(randBuyerCount)
+					document.write(`Кількість відвідувачів у ${daysOfWeek[i]} = ${randBuyerCount}<br>`)
+				}
+
+				let daysNumWithVisitorsLT20 = ''
+
+				for (let i = 0; i < visitorsCount.length; i++) {
+					if (visitorsCount[i] < 20) daysNumWithVisitorsLT20 += (`${i + 1} - ${daysOfWeek[i]}<br>`)
+				}
+				document.write(`Номери днів, протягом яких кількість відвідувачів була меншою за 20: <br>${daysNumWithVisitorsLT20}<br>`)
+
+				let minVisitors = Infinity
+				let maxVisitors = -Infinity
+				let daysNumVisitorsMin = 0
+				let daysNumVisitorsMax = 0
+
+				for (let i = 0; i < visitorsCount.length; i++) {
+					if (visitorsCount[i] < minVisitors) {
+						minVisitors = visitorsCount[i]
+						daysNumVisitorsMin = i + 1
+					}
+					if (visitorsCount[i] > maxVisitors) {
+						maxVisitors = visitorsCount[i]
+						daysNumVisitorsMax = i + 1
+					}
+				}
+				document.write(`Номер дня, коли кількість відвідувачів була мінімальною = ${daysNumVisitorsMin}<br>`)
+				document.write(`Номер дня, коли кількість відвідувачів була максимальною = ${daysNumVisitorsMax}<br>`)
+
+				let visitorsWorkDaysCount = 0
+				let visitorsHoliDaysCount = 0
+
+				for (let i = 0; i < visitorsCount.length; i++) {
+					if (i < 5) visitorsWorkDaysCount += visitorsCount[i]
+					else visitorsHoliDaysCount += visitorsCount[i]
+				}
+				document.write(`Загальна кількість клієнтів у робочі дні = ${visitorsWorkDaysCount}<br>`)
+				document.write(`Загальна кількість клієнтів у робочі дні = ${visitorsHoliDaysCount}<br>`)
 
 			</script>
 		</div>
