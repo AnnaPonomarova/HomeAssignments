@@ -17,7 +17,6 @@
 			<script>
 
 				let names = []
-
 				let namesCount = parseInt(prompt('Введіть кількість учнів'))
 
 				const name1 = 'Ivan', name2 = 'Anna', name3 = 'Alex', name4 = 'Olga'
@@ -38,11 +37,15 @@
 				}
 				document.write(`${names}<br>`)
 
-				let ivanCount = 0
-				for (let i = 0; i < names.length; i++) {
-					if (names[i] === 'Ivan') ivanCount++
+				function getIvanCount(names) {
+					let ivanCount = 0
+					for (let i = 0; i < names.length; i++) {
+						if (names[i] === 'Ivan') ivanCount++
+					}
+					return ivanCount
 				}
-				document.write(`Кількість Іванів = ${ivanCount}`)
+
+				document.write(`Кількість Іванів = ${getIvanCount(names)}`)
 
 			</script>
 		</div>
