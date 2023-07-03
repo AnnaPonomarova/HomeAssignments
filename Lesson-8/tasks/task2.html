@@ -24,13 +24,18 @@
 
 				let money = parseFloat(prompt('Введіть кількість грошей'))
 
-				for (let i = 0; i < prices.length; i++) {
-					if (money >= prices[i]) goodsListToBuy.push(goodsList[i])
+				function getGoodsListToBuy(prices, goodsList) {
+					for (let i = 0; i < prices.length; i++) {
+						if (money >= prices[i]) goodsListToBuy.push(goodsList[i])
+					}
+					return goodsListToBuy
 				}
 
-				if (goodsListToBuy.length > 0)
-					document.write(`Ви можете придбати: ${goodsListToBuy}`)
-				else document.write('у вас не вистачає грошей на покупку')
+				getGoodsListToBuy(prices, goodsList)
+
+				let result = (goodsListToBuy.length > 0) ? document.write(`Ви можете придбати: ${goodsListToBuy}`) :
+					document.write('у вас не вистачає грошей на покупку')
+
 			</script>
 		</div>
 	</div>

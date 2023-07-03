@@ -23,11 +23,6 @@
 				let subjectCount = parseInt(prompt('Введіть кількість предметів'))
 				let subjectMarksArray = []
 				let marksSum = 0
-				let counter5 = 0
-				let counter4 = 0
-				let counter3 = 0
-				let counter2 = 0
-
 
 				for (let i = 0; i < subjectCount; i++) {
 					let subjectMarks = parseFloat(prompt(`Введіть оцінку ${i + 1}`))
@@ -35,26 +30,43 @@
 					marksSum += subjectMarks
 				}
 
-				let average = marksSum / subjectCount
-				document.write(`Оцінки = ${subjectMarksArray}<br>`)
-				document.write(`Середній бал = ${average.toFixed(1)}<br>`)
-
-				for (let i = 0; i < subjectMarksArray.length; i++) {
-					switch (subjectMarksArray[i]) {
-						case 5: counter5++
-							break;
-						case 4: counter4++
-							break;
-						case 3: counter3++
-							break;
-						case 2: counter2++
-							break;
+				function getMinMark(subjectMarksArray) {
+					let min = subjectMarksArray[0]
+					for (let i = 0; i < subjectMarksArray.lenght; i++) {
+						if (subjectMarksArray[i] < min)
+							min = subjectMarksArray[i]
 					}
+					return min
 				}
-				if (counter2 > 0) document.write('Учень двійочник')
-				else if (counter3 > 0) document.write('Учень трійочник')
-				else if (counter4 > 0 && counter5 > 0) document.write('Учень хорошист')
-				else document.write('Учень відмінник')
+
+				function getPupilCategory(subjectMarksArray) {
+					let category
+					switch (getMinMark(subjectMarksArray)) {
+						case 1:
+						case 2:
+							category = 'двійочник'
+							break
+						case 3:
+							category = 'трійочник'
+							break
+						case 4:
+							category = 'хорошист'
+							break
+						case 5:
+							category = 'відмінник'
+							break
+						default:
+							throw new Error('Некоректна оцінка')
+							break
+					}
+					return category
+				}
+
+				category = getPupilCategory(subjectMarksArray)
+				document.write(`${category}  <br>`)
+
+				let averageMark = marksSum / subjectCount
+				document.write(`Середній бал = ${averageMark.toFixed(1)}`)
 
 			</script>
 		</div>
