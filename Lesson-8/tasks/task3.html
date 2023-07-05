@@ -32,14 +32,20 @@
 				document.write(`${lotteryValue}<br>`)
 
 				let winSum = 0
-				let userChoice
-				do {
-					userChoice = parseInt(prompt(`Зробіть Ваш вибір від 1 до ${lotterySize}`))
-					winSum = winSum + lotteryValue[userChoice - 1]
-					let finish = confirm(`Ваш виграш = ${winSum}. Хочете спробувати ще раз?`)
-					if (!finish) break
+
+				function totalWinSum(lotteryValue) {
+					let userChoice
+					do {
+						userChoice = parseInt(prompt(`Зробіть Ваш вибір від 1 до ${lotterySize}`))
+						winSum = winSum + lotteryValue[userChoice - 1]
+						let finish = confirm(`Ваш виграш = ${winSum}. Хочете спробувати ще раз?`)
+						if (!finish) break
+					}
+					while (userChoice)
+					return winSum
 				}
-				while (userChoice)
+
+				totalWinSum(lotteryValue)
 
 				if (winSum > 0) document.write(`Ваш виграш = ${winSum}`)
 				else if (winSum < 0) document.write(`Пощастить іншим разом. Ваш програш = ${Math.abs(winSum)}`)
