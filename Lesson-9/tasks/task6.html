@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Задача 5</h3>
+		<p>
+			Дано масив елементів. Знайти добуток додатних елементів
+		</p>
+		<div class="container-new">
+			<script>
+				const minElement = -10, maxElement = 10
+
+				function randArray(minElement, maxElement) {
+					let arr = []
+					for (let i = 0; i < 5; i++) {
+						let randElement = minElement + Math.floor(Math.random() * (maxElement - minElement + 1))
+						arr.push(randElement)
+					}
+					return arr
+				}
+
+				let newArrayForProduct = randArray(minElement, maxElement)
+				document.write(`initial array  ${newArrayForProduct}<br>`)
+
+				function getProductPositiveElements(newArrayForProduct) {
+					let product = 1
+					for (const element of newArrayForProduct) {
+						if (element > 0) product *= element
+					}
+					return product
+				}
+				document.write(`product of positive numbers: ${getProductPositiveElements(newArrayForProduct)}<br>`)
+
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>
