@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Задача. Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 3000)</h3>
+
+		<div class="container-new">
+			<script>
+
+				function randomArray(minElement, maxElement, quantity) {
+					let arr = []
+
+					for (let i = 0; i < quantity; i++) {
+						let randElement = minElement + Math.floor(Math.random() * (maxElement - minElement + 1))
+						arr.push(randElement)
+					}
+					return arr
+				}
+
+				let valuePaperAmount = randomArray(1, 5, 5)
+
+				document.write(`Початковий масив ${valuePaperAmount} <br>`)
+
+				//	1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн
+				document.write(`<p>1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн<br>`)
+
+				let valuePaperAmountGT1000 = valuePaperAmount.filter((value) => value > 1000)
+				document.write(`${valuePaperAmountGT1000} <br>`)
+
+				//2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.
+				document.write(`<p>2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.</p>`)
+
+				let valuePaperAmountGT1000Index = valuePaperAmount.reduce(
+					(result, value, index) => {
+						if (value > 1000)
+							result.push(index)
+						return result
+					},
+					[]
+				)
+				document.write(`${valuePaperAmountGT1000Index} <br>`)
+
+				// 3)Сформувати список з тих цін, які більші за попереднє значення
+				document.write(`<p>3)Cписок з тих цін, які більші за попереднє значення</p>`)
+
+				let priceBiggerThanPrev = valuePaperAmount.filter(
+					(value, index, baseArrRef) => index === 0 || baseArrRef[index] > baseArrRef[index - 1])
+				document.write(`${priceBiggerThanPrev} <br>`)
+
+				// 4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
+				document.write(`<p>4)Масив, що містить значення цін у відсотках стосовно максимального</p>`)
+
+				let max = valuePaperAmount.reduce((prevMax, el) => (el > prevMax ? el : prevMax))
+				document.write(`max = ${max} <br>`)
+
+				// 1 variant
+				let arrayPercentOfMax = [...valuePaperAmount]
+				arrayPercentOfMax.forEach((value, ind, baseArr) => {
+					baseArr[ind] = Math.round(baseArr[ind] * 100 / max)
+				})
+				document.write(`${arrayPercentOfMax} <br>`)
+
+				// 2 variant
+				let arrayPercentOfMax2 = Array.from(valuePaperAmount,
+					(element) => Math.round(element * 100 / max))
+				document.write(`${arrayPercentOfMax2} <br>`)
+
+				// 3 variant
+				let arrayPercentOfMax3 = valuePaperAmount.map(
+					(element) => Math.round(element * 100 / max))
+				document.write(`${arrayPercentOfMax3} <br>`)
+
+
+
+
+
+				// 5)Підрахувати кількість змін цін
+
+				document.write(`<p>5)Кількість змін цін</p>`)
+
+				let pricesChangesCount = valuePaperAmount.reduce(
+					(prevCount, value, index, baseRefArr) => (index > 0 && value != baseRefArr[index - 1]) ? prevCount + 1 : prevCount,
+					0)
+				document.write(`${pricesChangesCount} <br>`)
+
+				// 6)Визначити, чи є ціна, що менше 1000
+				document.write(`<p>6)Визначити, чи є ціна, що менше 1000</p>`)
+				if (valuePaperAmount.find((value) => value < 1000)) document.write(`є ціна, що менше 1000`)
+				else document.write(`немає цін, що менше 1000`)
+
+				// 7)Визначати, чи усі ціни більше за 1000
+				document.write(`<p>7)Визначати, чи усі ціни більше за 1000</p>`)
+				if (valuePaperAmount.every((value) => value >= 1000)) document.write(`усі значення більше 1000`)
+				else
+					document.write(`принаймні 1 значення менше 1000`)
+
+				// 8)Підрахувати кількість цін, що більше за 1000	
+				document.write(`<p>8)Кількість цін, що більше за 1000</p>`)
+				let pricesGT1000Count = valuePaperAmount.reduce(
+					(prevCount, value) =>
+						value > 1000 ? prevCount + 1 : prevCount, 0)
+				document.write(`${pricesGT1000Count} <br>`)
+
+				// 9)Підрахувати суму цін, що більше за 1000
+				document.write(`<p>9)Підрахувати суму цін, що більше за 1000</p>`)
+				let pricesGT1000Value = valuePaperAmount.reduce(
+					(prevCount, value) =>
+						value > 1000 ? prevCount + value : prevCount, 0)
+				document.write(`${pricesGT1000Value} <br>`)
+
+				// 10)Знайти першу ціну, що більше за 1000
+				document.write(`<p>10)Знайти першу ціну, що більше за 1000</p>`)
+				let firstPriceGT1000 = valuePaperAmount.find((value) => value > 1000)
+				document.write(`${firstPriceGT1000} <br>`)
+
+				// 11)Знайти індекс першої ціни, що більше за 1000
+				document.write(`<p>11)Знайти індекс першої ціни, що більше за 1000</p>`)
+				let firstPriceIndexGT1000 = valuePaperAmount.findIndex((value) => value > 1000)
+				document.write(`${firstPriceIndexGT1000} <br>`)
+
+				// 12)Знайти останню ціну, що більше за 1000
+				document.write(`<p>12)Знайти останню ціну, що більше за 1000</p>`)
+				let lastPriceGT1000 = valuePaperAmount.findLast((value) => value > 1000)
+				document.write(`${lastPriceGT1000} <br>`)
+
+				// 13)Знайти індекс останньої ціни, що більше за 1000
+				document.write(`<p>11)Знайти індекс першої ціни, що більше за 1000</p>`)
+				let lastPriceIndexGT1000 = valuePaperAmount.findLastIndex((value) => value > 1000)
+				document.write(`${lastPriceIndexGT1000} <br>`)
+
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>
