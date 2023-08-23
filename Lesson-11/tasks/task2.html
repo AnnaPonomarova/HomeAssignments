@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Задача 2. Дано інформацію про прибуток К магазинів протягом тижня. Знайти:</h3>
+
+		<ul class="task-list">
+			<li>2.1. загальний прибуток кожного масиву за тиждень;</li>
+			<li>2.2. загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за
+				вівторок, і т.д.);</li>
+			<li>2.3. загальний прибуток за робочі дні;</li>
+			<li>2.4. загальний прибуток за вихідні дні;</li>
+			<li>2.6 - сформувати загальний список (одновимірний масив) зі значенням, які що більші за 50</li>
+		</ul>
+
+		<div class="container-new">
+			<script>
+
+				let incomes = [
+					[18, 2, 23, 4, 5, 63, 7],
+					[51, 12, 3, 24, 35, 6, 47],
+					[31, 2, 13, 4, 25, 6, 47],
+					[1, 22, 3, 14, 5, 6, 7],
+					[13, 2, 33, 4, 15, 6, 27],
+					[81, 2, 3, 4, 5, 16, 73],
+					[19, 2, 23, 4, 35, 26, 17]
+				]
+				document.write(`Початковий масив<br>  [18, 2, 23, 4, 5, 63, 7] <br> [51, 12, 3, 24, 35, 6, 47] <br> [31, 2, 13, 4, 25, 6, 47]<br> [1, 22, 3, 14, 5, 6, 7]
+				<br>[13, 2, 33, 4, 15, 6, 27]<br>[81, 2, 3, 4, 5, 16, 73]<br>[19, 2, 23, 4, 35, 26, 17]<br>`)
+				//2.1 - загальний прибуток кожного магазину за тиждень
+				let sum = 0
+				let arrTotal = []
+				for (let rowIndex = 0; rowIndex < incomes.length; rowIndex++) {
+					for (let colIndex = 0; colIndex < incomes[rowIndex].length; colIndex++) {
+						sum += incomes[rowIndex][colIndex];
+					}
+					arrTotal.push(sum)
+					sum = 0
+				}
+				document.write(`загальний прибуток по кожному магазину - ${arrTotal}<br>`)
+
+				//2.2 - загальний прибуток усіх магазинів по дням(загальний прибуток усіх магазинів за понеділок, за	вівторок, і	т.д.);
+				let sum2 = 0
+				let arrTotal2 = []
+				for (let rowIndex = 0; rowIndex < incomes.length; rowIndex++) {
+					for (let colIndex = 0; colIndex < incomes.length; colIndex++) {
+						sum2 += incomes[colIndex][rowIndex];
+					}
+					arrTotal2.push(sum2);
+					sum2 = 0
+				}
+				document.write(`загальний прибуток усіх магазинів по дням тижня - ${arrTotal2}<br>`)
+
+				//2.3 - загальний прибуток за робочі дні
+				let sum3 = 0
+				for (let rowIndex = 0; rowIndex < incomes.length; rowIndex++) {
+					for (let colIndex = 0; colIndex <= 4; colIndex++) {
+						sum3 += incomes[rowIndex][colIndex];
+					}
+				}
+				document.write(`загальний прибуток за робочі дні - ${sum3}<br>`)
+
+				//2.4 - загальний прибуток за вихідні дні
+				let sum4 = 0
+				for (let rowIndex = 0; rowIndex < incomes.length; rowIndex++) {
+					for (let colIndex = 5; colIndex <= 6; colIndex++) {
+						sum4 += incomes[rowIndex][colIndex];
+					}
+				}
+				document.write(`загальний прибуток за вихідні дні - ${sum4}<br>`)
+
+				//2.6 - сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200
+				let incomesGT200 = incomes.flat().filter((value) => value > 50)
+				document.write(`${incomesGT200}`)
+
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>
